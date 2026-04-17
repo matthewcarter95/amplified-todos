@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { parseCookies, decodeCookieValue, getCookieSize } from '../utils/cookieParser';
 import type { DecodedCookie } from '../utils/cookieParser';
 
-const BFF_COOKIE_NAME = 'bffcookie';
-
 export default function CookieView() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [cookieData, setCookieData] = useState<{
