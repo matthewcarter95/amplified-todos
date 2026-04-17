@@ -1,0 +1,245 @@
+.debug-panel {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #7551c2;
+}
+
+.debug-panel-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #7551c2;
+}
+
+.debug-toggle-button {
+  padding: 4px 12px;
+  font-size: 0.9em;
+  background-color: #7551c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.debug-toggle-button:hover {
+  background-color: #5c3fa3;
+}
+
+.debug-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.debug-section {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.debug-section-header {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: none;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.debug-section-header:hover {
+  background-color: #e8e8e8;
+}
+
+.debug-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.debug-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.debug-badge.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.debug-section-content {
+  padding: 16px;
+  background-color: white;
+}
+
+.debug-message {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.debug-message.info {
+  background-color: #e7f3ff;
+  border-left: 4px solid #2196f3;
+}
+
+.debug-message.warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+.debug-message p {
+  margin: 8px 0;
+}
+
+.debug-note {
+  font-size: 0.9em;
+  color: #666;
+  margin: 4px 0;
+}
+
+.debug-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.debug-button {
+  padding: 6px 12px;
+  font-size: 0.9em;
+  background-color: #7551c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.debug-button:hover {
+  background-color: #5c3fa3;
+}
+
+.debug-subsection {
+  margin-bottom: 16px;
+}
+
+.debug-subsection h4 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+  color: #7551c2;
+}
+
+.debug-code {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.debug-code.json {
+  color: #0066cc;
+}
+
+.debug-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.debug-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.debug-label {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #7551c2;
+}
+
+.debug-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: #333;
+  word-break: break-all;
+}
+
+.debug-details {
+  margin-top: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: #fafafa;
+}
+
+.debug-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #7551c2;
+  user-select: none;
+}
+
+.debug-details summary:hover {
+  text-decoration: underline;
+}
+
+.debug-details .debug-code {
+  margin-top: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .debug-panel {
+    padding: 12px;
+  }
+
+  .debug-panel-header h2 {
+    font-size: 1.2em;
+  }
+
+  .debug-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .debug-code {
+    font-size: 0.75em;
+  }
+}
+
+/* Accessibility */
+.debug-section-header:focus,
+.debug-toggle-button:focus,
+.debug-button:focus {
+  outline: 2px solid #7551c2;
+  outline-offset: 2px;
+}
