@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Amplify } from 'aws-amplify';
+import outputs from '../../amplify_outputs.json';
 
 interface LambdaHeadersResponse {
   allHeaders: Record<string, string>;
@@ -28,8 +28,7 @@ export default function LambdaHeadersView() {
 
   useEffect(() => {
     // Get the Lambda URL from Amplify outputs
-    const config = Amplify.getConfig();
-    const customConfig = (config as { custom?: { echoHeadersUrl?: string } }).custom;
+    const customConfig = (outputs as { custom?: { echoHeadersUrl?: string } }).custom;
     if (customConfig?.echoHeadersUrl) {
       setEchoHeadersUrl(customConfig.echoHeadersUrl);
     }
