@@ -22,12 +22,12 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
     },
   };
 
+  // CORS headers are handled by the Lambda function URL configuration
+  // Do not set them here to avoid duplicate header values
   return {
     statusCode: 200,
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*",
     },
     body: JSON.stringify(responseData, null, 2),
   };
