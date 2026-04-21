@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import HeadersView from './HeadersView';
 import CookieView from './CookieView';
+import LambdaHeadersView from './LambdaHeadersView';
 import './DebugPanel.css';
 
 export default function DebugPanel() {
@@ -20,6 +21,7 @@ export default function DebugPanel() {
 
       {isVisible && (
         <div className="debug-panel-content">
+          <LambdaHeadersView />
           <HeadersView />
           <CookieView />
         </div>
